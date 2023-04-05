@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodeapi",
+    "start": "node app.js",
     "dev": "nodemon app",
     "build": "babel src -d lib",
     "test": "jest"
