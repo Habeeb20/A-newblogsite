@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+         body {
+            
+            margin: 0;
+            padding: 0;
+            background-color: gainsboro;
+        }
+
+        .container {
+            background-color: rgb(28, 45, 58) ;
+            overflow: hidden;
+            margin: 10px;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 10px;
+            
+
+
+        }
+
+        .container a {
+            display: inline-block;
+            padding: 10px;
+            margin-right:50px;
+            
+
+        }
+
+        .right a {
+            float: left;
+            margin-left: 200px;
+            color:white;
+            font-size: large;
+            font-weight: 100;
+        }
+
+        a {
+            float: right;
+            text-decoration: none;
+            color: white;
+            text-transform: capitalize;
+        }
+
+         img {
+            width: 50px;
+            height: 49px;
+            
+        }
+
+        .allborder {
+        border:1px solid silver;
+        background-color:white; 
+        border: noe;
+        box-shadow: 20px;
+        margin-top: 5px;
+        margin-left: 400px;
+        width: 270px;
+        height: 4700px;
+     }
+
+     .allborder h6 {
+         margin-top: 0px;
+     }
+
+     .allborder .laptop img {
+         width: 250px;
+         height: 200px;
+         padding-left: 7px;
+     }
+
+     .allborder .firstpic img {
+         width: 250px;
+         height: 150px;
+         padding-left: 5px;
+     }
+
+
+     hr {
+         height: 4px;
+         background-color: rgb(211, 198, 198);
+     }
+
+     .sec {
+         display: inline-flex;
+         padding-left: 5px;
+         justify-content: space-between;
+         margin-top: 0px;
+     }
+
+     .sec h2 {
+         margin-left: 5px;
+         margin-top: 0px;
+         padding-right: 5px;
+     }
+
+     .line {
+         margin-left: 9px;
+         margin-top: 0px;
+         padding-top: 0px;
+     }
+
+     h5 {
+         font-weight: lighter;
+         font-size: small;
+     }
+
+     button {
+        width:260px; 
+        height:35px;
+        border-radius:5px;  
+        background-color: yellow; 
+        border: none; 
+        margin-right: 5px;
+     }
+
+     .button2 {
+         background-color: orange;
+         margin-top: 7px;
+     } 
+
+     select {
+         background-color: azure;
+         border: 1px solid rgb(221, 210, 210);
+         border-radius: 10px;
+         width: 70px;
+         height: 30px;
+         margin-bottom: 15px;
+     }
+
+     .image {
+         margin-top: 29px;
+         display: inline-flex;
+         margin-right:2px ;
+         padding-inline: 5px;
+         padding: 5px;
+
+
+     }
+
+     .image1 {
+         padding-right: 25px;
+     }
+
+     .image2 {
+         padding-right: 25px;
+     }
+
+     .image3 {
+         padding-right: 25px;
+     }
+
+
+
+     .image h6 {
+         text-align: center;
+     }
+
+     .alsopics img {
+         width: 250px;
+         height: 150px;
+     }
+
+
+     .lastimage {
+         height: 300px;
+         width: 250px;
+         padding-left: 10px;
+     }
+
+     .allborder .star img {
+        width: 269px;
+        margin-left: 1px;
+        padding-top: 0px;
+     }
+
+     .sec h2 {
+        color:red; 
+        font-family:Cambria, Cochin, Georgia, Times,'Times New Roman', serif;
+
+     }
+
+
+     .image .image1 img{
+        padding-left:7px;
+     }
+
+     .image .image1 h6{
+        padding-left:7px;
+        color:rgb(77, 77, 136);
+     }
+
+     
+     .image .image2 img{
+        padding-left:7px;
+     }
+
+     .image .image2 h6{
+        padding-left:7px;
+        color:rgb(77, 77, 136);
+     }
+
+
+     .image .image3 img{
+        padding-left:7px;
+     }
+
+     .image .image3 h6{
+        padding-left:7px;
+        color:rgb(77, 77, 136);
+     }
+
+     h5 {
+        padding-left:10px ;
+     }
+
+     .alsopics a{
+        color:rgb(77, 77, 136);
+        padding-left:5px;
+        float: none;
+        margin-bottom: 0px;
+        text-align: center;
+
+     }
+
+     .alsopics .aapic img {
+        width:100px;
+        height:60px; 
+        padding-left: 80px;
+
+     }
+
+     .alsopics .anothpic img {
+        width:100px; 
+        height:60px; 
+        padding-left: 80px;
+
+     }
+
+     .last h3 {
+         padding-left: 20px;
+     }
+
+     .last img {
+        height:350px ;
+        width: 250px;
+        padding-left:10px
+
+     }
+
+     .container input {
+
+     width: 400px; 
+     height: 40px; 
+     border-radius: 9px;
+     padding-top:40px;
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    @media only screen and (max-width:850px){
+        .all button {
+            width:400px
+
+        
+        }
+
+      
+
+         
+         
+        }
+
+
+
+
+
+
+
+
+    
+</style>
+<body>
+    <div class="all">
+
+        <div class="container">
+            <div class="right">
+                <a href="#">Fintech</a>
+            </div>
+        
+              
+    
+           
+            <a href="/login">sign in <img style="width:29px;height:27px; margin: top 2px;" src="shopping2.png"> </a>
+            <a href="/shopping">shopping   <img style="width:29px;height:27px; margin: top 2px;" src="shopping.png"></a>
+            
+            <div  class="search">
+                <input  type="search" placeholder="Search in computer components" required>
+            </div>
+        </div>
+    
+        <div class="allborder">
+            <div class="star">
+                <img src="asus11.png">
+            </div>
+            <h6 class="h6">Asus TUF Dash 15 (2022) Gaming Laptop, 15.6" 144Hz FHD Display, Intel Core i7-12650H, GeForce 
+                RTX 3060,16GB DOR5, 512GB SSD, Thunderbolt 4, Windows 11 Home, off Black, FX517ZM-AS73
+            </h6>
+            <div class="laptop">
+                <img src="Asus1.png">
+            </div>
+    
+            <hr>
+            <div class="firstpic">
+                <img src="asus10.png">
+    
+            </div>
+    
+            <hr style="background-color:rgb(230, 223, 223) ; height: 2px;">
+            <div class="sec">
+                <h2>-10%</h2>
+                <h2><span style="font-size:small ; font-family: monospace;">$</span>1,175<span style="font-size:small ; font-family: monospace;">83</span></h2>
+            </div>
+            <h6 class="line">List Price:<span style="text-decoration:line-through ;">$1,299.99</span></h6>
+            <h5>$243.71 Shipping & Import Fees Deposit to Nigeria Details</h5>
+            <h5>Delivery Wed, 0ct 5. Order within <span style="color:green ;">5 hrs 52 mins</span></h5>
+    
+            <select>
+                <label>
+                    <option>Qty: 1</option>
+                    <option>Qty: 2</option>
+                    <option>Qty: 3</option>
+                    <option>Qty: 4</option>
+                    <option>Qty: 5</option>
+                </label>
+               
+             
+            </select>
+            <div>
+                
+            <a href=><button onclick="alert('you have added to cart')">Add to cart</button></a>
+            <a href="/login"><button class="button2">Buy Now</button></a>
+    
+            </div>
+    
+           <div class="image">
+               
+    
+    
+               <div class="image1">
+                <img src="asus7.png">
+                <h6 >sold by <br> Fintech.com</h6>
+               </div>
+    
+               <div class="image2">
+                <img src="asus8 (3).png">
+                <h6>Ships from <br> Fintech.com</h6>
+               </div>
+               
+    
+               <div class="image3">
+                <img src="asus9 (2).png">
+                <h6>30 day Return,<br>Refund or <br>Replacement</h6>
+               </div>
+           </div>
+    
+    
+    
+          <hr style="height:1px ;">
+          <h5><span style="font-weight:900 ;">Note:</span>Products with electrical plugs are designed <br>for use in the US. Outlets and voltage differ<br>
+         internationally and this product may require an <br>adapter or converter for use in your destination.<br>please
+        check compatibility before purchasing</h5>
+    
+        <h3>You might also like</h3>
+        <div class="alsopics">
+            <img src="asuslaptop.png">
+            <a style="color:rgb(77, 77, 136);padding-left:5px;float: none;margin-bottom: 0px;text-align: center;" href="/product2"><h5>ASUS TUF Gaming <br>F17 Gaming Laptop...</h5></a>
+            <div class="aapic">
+                <img src="asusstar.png">
+            </div>
+            
+        </div>
+    
+        <div class="alsopics">
+            <img src="asuslaptop2.png">
+            <a href="/product3"><h5>2022 ASUS TUF<br> Gaming 17.3" FHD 1...</h5></a>
+            <div class="aapic">
+                <img src="star.png">
+            </div>
+            
+        </div>
+    
+        <img class="lastimage" src="asus3.png">
+        <img class="lastimage" src="asus4.png">
+        <img class="lastimage" src="asus5.png">
+        <img class="lastimage" src="asus6.png">
+        <img class="lastimage" src="asus20.png">
+        <hr>
+        <div class="last">
+            <h3>from the manufacturer</h3>
+            <img src="asus24.png">
+            <img src="asus22.png">
+            <img src="asus21.png">
+           
+           
+    
+        </div>
+     
+        </div>
+    
+
+    </div>
+   
+  
+
+    <div class="container">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+    </div>
+    <h1>hello</h1>
+    <h4>heyyyyyyyyy</h4>
+
+
+</body>
+</html>

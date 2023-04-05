@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialBook</title>
+</head>
+<style>
+     * {
+         padding: 0;
+         margin: 0;
+         font-family: 'poppins', sans-serif;
+         box-sizing: border-box;
+     }
+
+     :root{
+         --body-color: #efefef;
+         --nav-color: #1876f2;
+         --bg-color:#fff;
+         --cd-color:#9a9a9a;
+
+     }
+
+     .dark-theme {
+         --body-color:#0a0a0a;
+         --nav-color:#000;
+         --bg-color:#000;
+     }
+
+     body {
+         background: var(--body-color);
+         transition: background 0.3s;
+        
+     }
+
+     nav {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         background: var(--nav-color);
+         padding: 5px 5%;
+         position: sticky;
+         top: 0;
+         z-index: 100;
+     }
+
+     .logo {
+         width: 160px;
+         margin-right: 45px;
+     }
+
+     .nav-left, .nav-right {
+         display: flex;
+         align-items: center;
+     }
+
+     .nav-left ul li {
+         list-style: none;
+         display: inline-block;
+         padding-right: 20px;
+     }
+
+     .nav ul li img {
+         width: 28px;
+         margin:o 15px;
+    
+     }
+
+     .nav-user-icon img {
+         width: 40px;
+         border-radius: 50%;
+         cursor: pointer;
+     }
+
+
+     .nav-user-icon{
+         margin-left: 25px;
+     }
+
+     .search-box {
+         background: #efefef;
+         width: 350px;
+         border-radius: 20px;
+         display: flex;
+         align-items: center;
+         padding: 0 15px;
+     }
+
+     .search-box img {
+         width: 18px;
+     }
+
+     .search-box input {
+         width: 100%;
+         background: transparent;
+         padding: 10px;
+         outline: none;
+         border: 0;
+     }
+
+     .online {
+         position: relative;
+     }
+     .online::after {
+         content: '';
+         width: 7px;
+         height: 7px;
+         border: 2px solid #fff;
+         border-radius: 50%;
+         background: #41db51;
+         position: absolute;
+         top:0;
+         right: 0;
+     }
+
+
+
+     .container {
+         display: flex;
+         justify-content: space-between;
+         padding: 13px 5%;
+
+     }
+
+
+     .left-sidebar {
+        
+         flex-basis: 25%;
+         position: sticky;
+         top: 70px;
+         align-self: flex-start;
+        
+     }
+
+
+     .right-sidebar {
+        
+         flex-basis: 25%;
+         position: sticky;
+         top: 70px;
+         align-self: flex-start;
+         background: var(--bg-color);
+         padding: 20px;
+         border-radius: 4px;
+         color: #626262;
+         
+      
+     }
+
+
+
+     .main-content {
+         flex-basis: 47%;
+     }
+
+
+     .imp-link a, .shortcut-links a {
+         text-decoration: none;
+         display: flex;
+         align-items: center;
+         margin-bottom: 30px;
+         color: #626262;
+         width: fit-content;
+     }
+
+
+     .imp-link a img {
+         width: 25px;
+         margin-right: 15px;
+     }
+
+    .imp-link a:last-child{
+        color: #1876f2;
+    }
+
+    .imp-link {
+        border-bottom: 1px solid #ccc;
+    }
+
+
+
+    .shortcut-links a img {
+        width: 40px;
+        border-radius: 4px;
+        margin-right: 20px;
+    }
+
+    .shortcut-links p {
+        margin: 25px 0;
+        color:#626262;
+        font-weight: 500;
+    }
+
+    .sidebar-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+    }
+
+    .sidebar-title h4 {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .sidebar-title  a {
+        text-decoration: none;
+        color: #1876f2;
+        font-size: 12px;
+    }
+
+
+    .event {
+        display: flex;
+        font-size: 14px;
+        margin-bottom: 20px;
+
+    }
+
+    .left-event {
+        border-radius: 10px;
+        height: 65px;
+        width: 65px;
+        margin-right: 15px;
+        padding-top: 10px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .event p {
+        font-size: 12px;
+    }
+
+    .event a {
+        font-size: 12px;
+        text-decoration: none;
+        color: #1876f2;
+    }
+
+    .left-event span {
+        position: absolute;
+        bottom:0;
+        left: 0;
+        width: 100%;
+        background: #1876f2;
+        color: #fff;
+        font-size: 10px;
+        padding: 4px p;
+    }
+
+
+    .sidebar-ads {
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 4px;
+    }
+
+    .online-list {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+    } 
+
+    .online-list .online img {
+        width: 40px;
+        border-radius: 50%;
+    }
+
+
+    .online-list .online {
+        width:40px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+
+    .online-list .online::after {
+        top: unset;
+        bottom: 5px;
+    }
+
+
+    .story-gallery{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .story {
+        flex-basis: 18%;
+        padding-top: 32%;
+        position: relative;
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(status-1.png);
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+
+    }
+
+    .story img {
+        position: absolute;
+        width: 45px;
+        border-radius: 50%;
+        top: 10px;
+        left: 10px;
+        border: 5px solid #1876f2;
+    }
+
+
+    .story  p {
+        position: absolute;
+        bottom: 10px;
+        width:100%;
+        text-align: center;
+        color: #fff;
+        font-size:14px;
+    }
+
+    .story1 {
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(status-1.png);
+
+    }
+
+    .story2 {
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(status-2.png);
+
+    }
+
+    .story3 {
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(status-3.png);
+
+    }
+    .story4 {
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(status-4.png);
+
+    }
+    .story5 {
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(status-5.png);
+
+    }
+
+    .story.story1 img {
+        top: unset;
+        left: 50%;
+        bottom:40px;
+        transform: translateX(-50%);
+        border:0;
+        width: 35px;
+    }
+
+
+    .write-post-container{
+        width:100%;
+        background: var(--bg-color);
+        border-radius: 6px;
+        padding: 20px;
+        columns: #626262;
+    }
+
+    .user-profile{
+        display: flex;
+        align-items: center;
+    }
+
+    .user-profile img{
+        width: 45px;
+        border-radius: 50%;
+        margin-right:10px;
+    }
+
+    .user-profile p {
+        margin-bottom: -5px;
+        font-weight: 500;
+        color: #626262;
+    }
+
+    .user-profile small {
+        font-size:12px ;
+    }
+
+    .post-input-container {
+        padding-left: 55px;
+        padding-top: 20px;
+    }
+
+
+    .post-input-container textarea {
+        width:100%;
+        border:none;
+        outline:0;
+        border-bottom: 1px solid #ccc;
+        background: transparent;
+        resize: none;
+
+    }
+
+    .add-post-links {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .add-post-links a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: #626262;
+        font-size: 13px;
+        margin-right: 30px;
+    }
+
+    .add-post-links a img {
+        width: 20px;
+        margin-right: 10px;
+
+    }
+
+
+    .post-container {
+        width: 100%;
+        background: var(--bg-color);
+        border-radius: 6px;
+        padding: 20px;
+        color: #626262;
+        margin: 20px 0;
+    }
+
+    .user-profile .p {
+        padding-bottom: 6px;
+    }
+
+    .user-profile span {
+        font-size: 13px;
+        color: #9a9a9a;
+        margin-top: 10px;
+
+    }
+
+
+    .post-text {
+        color: #9a9a9a;
+        margin: 15px 0;
+        font-size: 15px;
+
+    }
+
+    .post-text span {
+        color: #626262;
+        font-weight: 500;
+    }
+
+    .post-text a{
+        color: #1876f2;
+        text-decoration: none;
+    }
+
+    p a{
+        color: #1876f2;
+        text-decoration: none;
+        margin-bottom: 5px;
+    }
+
+
+
+    .post-img {
+        width: 100%;
+        padding-top: 8px;
+        border-radius: 4px;
+        margin-bottom: 5px;
+
+    }
+
+
+    .post-row {
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    .activity-icons div img {
+        width: 18px;
+        margin-right: 10px;
+    }
+
+    .activity-icons div {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 30px;
+      
+    }
+
+    .post-profile-icon {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .post-profile-icon img{
+        width: 20px;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+
+    .load-more-btn {
+        display:block;
+        margin:auto;
+        cursor: pointer;
+        padding:5px 10px;
+        border: 1px solid  #9a9a9a;
+        background: transparent;
+        color: #626262;
+        border-radius: 4px;
+    }
+
+
+
+    .settings-menu {
+        position: absolute;
+        width: 90%;
+        max-width: 350px;
+        
+        background: var(--bg-color);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        border-radius: 4px;
+        overflow: hidden;
+        top: 108%;
+        right: 5%;
+        max-height: 0;
+        transition: max-height 0.3s;
+    }
+
+    .settings-menu-height {
+        max-height: 450px;
+    }
+
+
+    .user-profile a {
+        font-size: 12px;
+        color: #1876f2;
+        text-decoration: none;
+    }
+
+
+    .settings-menu-inner {
+        padding: 20px;
+
+    }
+
+
+    .settings-menu-inner a:hover{
+        border:1px solid var(--cd-color);
+        height: 30px;
+        border-radius: 10px;
+        
+    }
+
+
+    .settings-menu hr {
+        border: none;
+        height: 1px;
+        background: #626262;
+        margin: 15px 0;
+
+    }
+
+    .settings-links {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+    }
+
+    .settings-links .settings-icon{
+        width: 38px;
+        margin-right: 10px;
+        border-radius: 50%;
+    }
+
+
+    .settings-links a {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        color: #626262;
+        
+    }
+
+    #dark-btn {
+        position: absolute;
+        top: 20px;
+        right:20px;
+        background: #ccc;
+        width: 45px;
+        border-radius: 15px;
+        padding: 2px 3px;
+        cursor: pointer;
+        display: flex;
+        transition: padding-left 0.5s, background 0.5s;
+
+    }
+
+
+    #dark-btn span {
+        width: 18px;
+        height: 18px;
+        background: #fff;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+
+    #dark-btn.dark-btn-on {
+        padding-left: 23px;
+        background: #0a0a0a;
+    }
+
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <nav>
+        <div class="nav-left">
+            <img src="logo.png" class="logo">
+            <ul>
+                <li><img src="notification.png"></li>
+                <li><img src="inbox.png"></li>
+                <li><img src="video.png"></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+
+
+
+           <div class="search-box">
+               <img src="search.png">
+               <input type="text" placeholder="search">
+           </div>
+           <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+               <img src="profile-pic.png">
+           </div>
+
+
+
+        </div>
+
+   <!----------settings-menu------------------------->
+
+
+
+        <div class="settings-menu">
+
+
+            <div id="dark-btn">
+                <span></span>
+            </div>
+
+            <div class="settings-menu-inner">
+
+                <div class="user-profile">
+                    <img src="profile-pic.png">
+                    <div>
+                        <p>Junior james</p>
+                      <a href="/product2">see your profile</a>
+                    </div>
+                </div>
+
+                <hr>
+    
+                <div class="user-profile">
+                    <img src="feedback.png">
+                    <div>
+                        <p>Give feedback</p>
+                      <a href="#">see more design</a>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="settings-links">
+                    <img src="setting.png" class="settings-icon">
+                    <a href="#">settings & privacy <img src="arrow.png" width="10px"></a>
+                </div>
+
+                <div class="settings-links">
+                    <img src="help.png" class="settings-icon">
+                    <a href="#">help & support <img src="arrow.png" width="10px"></a>
+                </div>
+
+                <div class="settings-links">
+                    <img src="display.png" class="settings-icon">
+                    <a href="#">Display & Accessibility <img src="arrow.png" width="10px"></a>
+                </div>
+
+                
+                <div class="settings-links">
+                    <img src="logout.png" class="settings-icon">
+                    <a href="/login">logout <img src="arrow.png" width="10px"></a>
+                </div>
+    
+    
+    
+    
+
+            </div>
+           
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <!----------left-sidebar------------------------->
+        <div class="left-sidebar">
+            <div class="imp-link">
+                <a href="#"><img src="news.png">Latest News</a>
+                <a href="#"><img src="friends.png">Friends</a>
+                <a href="#"><img src="group.png">Group</a>
+                <a href="#"><img src="marketplace.png">Marketplace</a>
+                <a href="#"><img src="watch.png">watch</a>
+                <a href="#">See More</a>
+            </div>
+            <div class="shortcut-links">
+                <p>Your shortcuts</p>
+                <a href="#"><img src="shortcut-1.png">Web developers</a>
+                <a href="#"><img src="shortcut-2.png">Web design course</a>
+                <a href="#"><img src="shortcut-3.png">full stack development</a>
+                <a href="#"><img src="shortcut-4.png">Website Experts</a>
+            </div>
+
+
+        </div>
+
+          <!----------main-content------------------------->
+        <div class="main-content">
+            <div class="story-gallery">
+                <div class="story story1">
+                    <img src="upload.png">
+                    <p>Post Story</p>
+                </div>
+
+                <div class="story story2">
+                    <img src="member-1.png">
+                    <p>Juliana</p>
+                </div>
+
+                <div class="story story3">
+                    <img src="member-2.png">
+                    <p>Micheal</p>
+                </div>
+
+                <div class="story story4">
+                    <img src="member-3.png">
+                    <p>Selina</p>
+                </div>
+
+                <div class="story story5">
+                    <img src="member-4.png">
+                    <p>Junior</p>
+                </div>
+            </div>
+
+            <div class="write-post-container">
+                <div class="user-profile">
+                    <img src="profile-pic.png">
+                    <div>
+                        <p>Junior james</p>
+                        <small>public</small>
+                    </div>
+                </div>
+
+                <div class="post-input-container">
+                    <textarea placeholder="say your mind" rows="3"></textarea>
+                    <div class="add-post-links">
+                        <a href="#"><img src="live-video.png">live</a>
+                        <a href="#"><img src="photo.png">photo/video</a>
+                        <a href="#"><img src="feeling.png">Activity</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="profile-pic.png">
+                        <div>
+                            <p class="p">Junior james</p>
+                            <span>jan 10 1992, 02:30pm</span>
+                        </div>
+                    </div>
+
+                    <a href="#"></a>
+
+                </div>
+              
+                <p>you can contact us on the development of your websites. <a href="#">web development </a> </p>
+                <img src="feed-image-1.png" class="post-img">
+
+
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="like-blue.png">160</div>
+                        <div><img src="comment.png">200</div>
+                        <div><img src="share.png">10</div>
+                        
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="profile-pic.png">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="profile-pic.png">
+                        <div>
+                            <p class="p">Selina Gomez</p>
+                            <span>june 1 2002, 02:30pm</span>
+                        </div>
+                    </div>
+
+                    <a href="#"></a>
+
+                </div>
+              
+                <p>like and share this video with friends and family. <a href="#">web development </a> </p>
+                <img src="feed-image-2.png" class="post-img">
+
+
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="like.png">100</div>
+                        <div><img src="comment.png">200</div>
+                        <div><img src="share.png">10</div>
+                        
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="profile-pic.png">
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="profile-pic.png">
+                        <div>
+                            <p class="p">Junior james</p>
+                            <span>jan 10 1992, 02:30pm</span>
+                        </div>
+                    </div>
+
+                    <a href="#"></a>
+
+                </div>
+              
+                <p>you can contact us on the development of your websites. <a href="#">web development </a> </p>
+                <img src="feed-image-3.png" class="post-img">
+
+
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="like-blue.png">160</div>
+                        <div><img src="comment.png">200</div>
+                        <div><img src="share.png">10</div>
+                        
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="profile-pic.png">
+
+                    </div>
+                </div>
+            </div>
+
+
+            
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="profile-pic.png">
+                        <div>
+                            <p class="p">Junior james</p>
+                            <span>jan 10 1992, 02:30pm</span>
+                        </div>
+                    </div>
+
+                    <a href="#"></a>
+
+                </div>
+              
+                <p>you can contact us on the development of your websites. <a href="#">web development </a> </p>
+                <img src="feed-image-4.png" class="post-img">
+
+
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="like-blue.png">160</div>
+                        <div><img src="comment.png">200</div>
+                        <div><img src="share.png">10</div>
+                        
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="profile-pic.png">
+
+                    </div>
+                </div>
+            </div>
+
+
+            
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="profile-pic.png">
+                        <div>
+                            <p class="p">Junior james</p>
+                            <span>jan 10 1992, 02:30pm</span>
+                        </div>
+                    </div>
+
+                    <a href="#"></a>
+
+                </div>
+              
+                <p>you can contact us on the development of your websites. <a href="#">web development </a> </p>
+                <img src="feed-image-5.png" class="post-img">
+
+
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="like-blue.png">160</div>
+                        <div><img src="comment.png">200</div>
+                        <div><img src="share.png">10</div>
+                        
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="profile-pic.png">
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <button type="button" class="load-more-btn">load more</button>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+          <!----------right-sidebar------------------------->
+        <div class="right-sidebar">
+
+            <div class="sidebar-title">
+                <h4>Events</h4>
+                <a href="#">See all</a>
+            </div>
+
+
+            <div class="event">
+                <div class="left-event">
+                    <h3>16</h3>
+                    <span>March</span>
+                </div>
+                <div class="right-event">
+                    <h4>Social Media</h4>
+                    <p>Jaden Tech suit</p>
+                    <a href="#">More info</a>
+                </div>
+                
+            </div>
+
+
+            
+            <div class="event">
+                <div class="left-event">
+                    <h3>22</h3>
+                    <span>August</span>
+                </div>
+                <div class="right-event">
+                    <h4>Digital Marketing</h4>
+                    <p>Jaden Tech suit</p>
+                    <a href="#">More info</a>
+                </div>
+                
+            </div>
+
+            <div class="sidebar-title">
+                <h4>Advertisement</h4>
+                <a href="#">Close</a>
+            </div>
+
+            <img src= "advertisement.png" class="sidebar-ads">
+
+            <div class="sidebar-title">
+                <h4>Conversation</h4>
+                <a href="#">Hide chat</a>
+
+            </div>
+
+            <div class="online-list">
+                <div class="online">
+                    <img src="member-1.png">
+                </div>
+                <p>Augustine Juliana</p>
+            </div>
+
+            <div class="online-list">
+                <div class="online">
+                    <img src="member-2.png">
+                </div>
+                <p>Junior Micheal</p>
+            </div>
+
+            <div class="online-list">
+                <div class="online">
+                    <img src="member-3.png">
+                </div>
+                <p>Selina Gomez</p>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+    
+</body>
+<script>
+    var settingsmenu = document.querySelector(".settings-menu");
+    var darkBtn = document.querySelector("#dark-btn");
+
+    function settingsMenuToggle(){
+        settingsmenu.classList.toggle("settings-menu-height");
+    }
+
+    darkBtn.onclick = function(){
+        darkBtn.classList.toggle("dark-btn-on");
+        document.body.classList.toggle("dark-theme");
+
+
+        if(localStorage.getItem("theme") == "light"){
+            localStorage.setItem("theme", "dark");
+        }
+        else{
+            localStorage.setItem("theme", "light");
+        }
+    }
+    
+    if(localStorage.getItem("theme") == "light"){
+        darkBtn.classList.remove("dark-btn-on");
+        document.body.classList.remove("dark-theme");
+    }
+
+    else if(localStorage.getItem("theme") == "dark"){
+        darkBtn.classList.add("dark-btn-on");
+        document.body.classList.add("dark-theme");
+    }
+
+    else{
+        localStorage.setItem("theme", "light");
+    }
+
+
+
+
+
+    localStorage.setItem("theme", "dark");
+    localStorage.getItem("theme");
+</script>
+</html>

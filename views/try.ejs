@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding:0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #f4c531;
+    }
+</style>
+
+
+
+<body>
+    <img name="slide" width="400" height="200">
+    
+
+    
+</body>
+<script>
+    var i = 0;
+    var images = [];
+    var time = 3000;
+
+
+    images[0] = 'Asus1.png';
+    images[1] = 'asus2.png';
+    images[2] = 'asus3.png';
+
+
+    function changeimg(){
+        document.slide.src = images[i];
+
+
+        if(i < images.length - 1){
+            i++;
+        } else {
+            i= 0;
+        }
+
+        setTimeout("changeimg()", time);
+    }
+
+
+    window.onload = changeimg
+
+</script>
+</html>

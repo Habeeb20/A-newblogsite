@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+        background-color: rgb(250, 250, 244);
+
+    }
+     .border {
+        border:1px solid silver;
+        background-color:white; 
+        border: noe;
+        box-shadow: 20px;
+        margin-top: 5px;
+        margin-left: 400px;
+        width: 270px;
+        height: 400px;
+     }
+
+     .buttom {
+        border:2px dotted orange;
+        background-color: black;
+        color: white;
+        border: none;
+        margin-top: 5px;
+        width: 270px;
+        height: 100px;
+        margin-left:400px;
+        
+     }
+
+     .buttom a {
+         display: inline-flex;
+         color: white;
+         text-decoration: none;
+         font-size: xx-small;
+         padding: 13px;
+         padding-top: 25px;
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    @media screen and (max-width: 850px){
+        .border {
+            margin-left: 2px;
+            width: 460px;
+        }
+        .display {
+            margin-left: 2px;
+            width: 460px;
+        }
+
+        .img {
+            width: 460px;
+        }
+
+        hr {
+            width: 460px;
+        }
+
+        .text1 {
+            width: 460px;
+            font-size: medium;
+        }
+
+        .text1 h6 {
+            font-size: small;
+            margin-top: 5px;
+        }
+        .contactus1 img {
+            width: 460px;
+        }
+       .chat {
+           width: 460px;
+       }
+
+       .text2 {
+           width: 460px;
+       }
+
+       .text2 h6 {
+            font-size: small;
+            margin-top: 5px;
+        }
+
+       .help {
+           width: 460px;
+       }
+
+       .help img {
+           width: 450px;
+       }
+
+       .start button {
+           width: 440px;
+       }
+
+       .start1 button {
+           width: 440px;
+       }
+
+       .help h5 {
+           width: 450px;
+       }
+
+       .help .service {
+           width: 430px;
+       }
+
+       .help .service select {
+           width: 430px;
+       }
+
+       .help .push {
+           width: 430px;
+       }
+
+       .help .push select {
+           width: 430px;
+       }
+
+       .help .app {
+           width: 430px;
+       }
+
+       .help .service select {
+           width: 430px;
+       }
+
+       .num {
+           padding-right: 1px;
+           margin-right: 2px;
+       }
+
+
+
+         
+         
+        }
+    
+      
+</style>
+<body>
+    <h1 style="margin-left:400px; font-size:medium; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;";>Welcome</h1>
+    <div class="border">
+        <div style="padding: 10px;">
+            <label for="create" >
+            <input name="acc"  type="radio"  href="/signing" >
+            <a href="/signing"style="text-decoration:none ; color:black"><span style="font-weight:bolder;">Create an account.</span><span style="font-size:x-small ;">  New to Fintech?</span></a> 
+            </label>
+
+        </div>
+       
+       
+       <form action="/login"   method="post">
+        <div style="padding: 5px; padding-left: 10px;">
+            <label style="font-weight:bold ; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; padding:5px; margin: 3px;" for="Email">
+                First name
+                <input style="width:239px; height:30px; border-radius:5px; border: 1px solid grey;  margin-bottom: 10px;" name="name" type="text" required >
+            </label>
+
+            <label style="font-weight:bold ; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; padding:5px; margin: 3px;" for="Email">
+                Email address
+                <input style="width:239px; height:30px; border-radius:5px; border: 1px solid grey; margin-bottom: 10px;" name="email" type="email" required >
+            </label>
+
+            <label style="font-weight:bold ; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; padding:5px; margin: 3px;" for="Email">
+                Create a password
+                <input style="width:239px; height:30px; border-radius:5px; border: 1px solid grey;" name="password" type="password" required >
+            </label>
+            <a href="/shopping"><button style="width:239px; height:27px; border-radius:5px; margin-top:10px; background-color: rgb(253, 253, 105); border: none; " >Continue</button></a>
+              
+            <h5>By continuing, you agree to Fintech's <br>Conditions of Use and Privacy Notice </h5>
+
+            <a href="contactus" style="text-decoration:none ;">Need help?</a>
+    
+           </div>
+       </form>
+
+       <div style="background-color:  rgb(250, 250, 244);padding: 10px;">
+        <label for="create" >
+        <input name="acc"  type="radio" >
+        <a href="/login" style="text-decoration:none ; "><span style="font-weight:bolder;">Sign in.</span><span style="font-size:x-small ;">  Already a customer?</span></a> 
+        </label>
+
+    </div>
+   
+       
+      
+      
+    </div>
+    <div class="buttom">
+        <a href="#">Condition of Use</a>
+        <a href="#">Privacy Notice</a>
+        <a href="#">Interest-Based Ads</a>
+
+        <a style="margin-left:25px; padding-top:0.5em;">@1992-2022,Fintech.com,Inc or its affiliates</a>
+    </div>
+
+</body>
+</html>
